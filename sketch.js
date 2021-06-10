@@ -28,6 +28,9 @@ function draw(){
     }
    
     Engine.update(engine);
+    textSize(20);
+    fill("white");
+    text("Time: " + datetime,100,50);
   
 }
 
