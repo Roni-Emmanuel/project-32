@@ -43,17 +43,23 @@ async function getBackgroundImg(){
     // write code slice the datetime
 datetime = responseJson.data.datetime.date_time;
     time = responseJson.data.datetime.time;
-  hour=datetime.slice(11,13);
+ hour = responseJson.data.datetime.hour_24_wolz;
     // add conditions to change the background images from sunrise to sunset
    if (hour>=04 && hour<=06){
      bg = "sunrise1.png";
    }else if(hour>=06 && hour<=08){
      bg = "sunrise2.png";  
-   }else if(hour>=08 && hour<=12){
+   }else if(hour>=08 && hour<=10){
      bg = "sunrise3.png";  
-   }else if(hour>=12 && hour<=06){
-      bg = "sunset8.png"; 
-   }else {
+   }else if (hour >10 && hour < 12){
+     bg = "sunrise4.png"
+   }else if(hour>=12 && hour<=14){
+      bg = "sunrise5.png"; 
+   }else if(hour>14 && hour<=16){
+    bg = "sunset7.png"; 
+ }else if(hour>17 && hour<=20){
+  bg = "sunset8.png"; 
+}else {
        bg = "sunset12.png";
    }
     //load the image in backgroundImg variable here
