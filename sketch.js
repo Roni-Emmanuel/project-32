@@ -45,7 +45,7 @@ datetime = responseJson.data.datetime.date_time;
     time = responseJson.data.datetime.time;
  hour = responseJson.data.datetime.hour_24_wolz;
     // add conditions to change the background images from sunrise to sunset
-   if (hour>=04 && hour<=06){
+  if (hour>=04 && hour<=06){
      bg = "sunrise1.png";
    }else if(hour>=06 && hour<=08){
      bg = "sunrise2.png";  
@@ -57,11 +57,18 @@ datetime = responseJson.data.datetime.date_time;
       bg = "sunrise5.png"; 
    }else if(hour>14 && hour<=16){
     bg = "sunset7.png"; 
- }else if(hour>17 && hour<=20){
-  bg = "sunset8.png"; 
-}else {
-       bg = "sunset12.png";
+   }else if(hour>16 && hour<=18){
+    bg = "sunset8.png"; 
+   }else if(hour>18 && hour<=20){
+    bg = "sunset9.png";
+   }else if(hour>20 && hour<=22){
+     bg = "sunset10.png";
+   }else if(hour>22 && hour<=24){
+     bg = "sunset11.png";
+   }else if(hour>0 && hour<=4){
+     bg = "sunset12.png";
    }
+   
     //load the image in backgroundImg variable here
     backgroundImg = loadImage(bg);
 }
